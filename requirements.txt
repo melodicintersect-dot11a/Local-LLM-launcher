@@ -1,0 +1,6 @@
+# Optional: For live CPU/RAM monitoring in the UI
+psutil
+
+# Optional: For rich HuggingFace Model Card parsing
+huggingface_hub
+pyyaml
