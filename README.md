@@ -1,3 +1,5 @@
+<img width="1383" height="1016" alt="launcher-02" src="https://github.com/user-attachments/assets/901ed0c7-a81b-4e8d-a7ec-8a451133d177" />
+<img width="1385" height="1019" alt="launcher-01" src="https://github.com/user-attachments/assets/1958ffc2-682e-4e53-822b-96efee373223" />
 # 🦙 LLaMA Server Launcher
 
 A pure Python / Tkinter GUI for launching and managing `llama-server.exe` from [llama.cpp](https://github.com/ggerganov/llama.cpp). 
@@ -83,3 +85,8 @@ pip install psutil huggingface_hub pyyaml
 ### 💡 Pro-Tips
 * **Phantom Windows / Scrolling:** The UI uses a custom canvas scrolling implementation. If you have many parameters, just use your mouse wheel *while hovering over the tab* to scroll.
 * **TurboQuant KV Cache:** If you see `turbo2/3/4` in the KV Cache dropdown, note that these require a custom-built TurboQuant fork of `llama-server.exe`. They will throw an error on the standard mainline build.
+
+<img width="1385" height="1019" alt="launcher-01" src="https://github.com/user-attachments/assets/8dcc2247-1bf7-4df9-a138-f4ace7370db1" />
+
+<img width="1383" height="1016" alt="launcher-02" src="https://github.com/user-attachments/assets/5eacd595-3430-424d-8eaa-1e5a1d50b5a1" />
+
