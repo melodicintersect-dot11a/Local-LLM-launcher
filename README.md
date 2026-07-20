@@ -30,3 +30,11 @@ Designed for power users who need deep control over sampling, speculative decodi
    ```bash
    git clone https://github.com/YOUR_USERNAME/llama-server-launcher.git
    cd llama-server-launcher
+
+### 📦 Dependencies & Running
+
+The launcher is built with pure Python and **requires no mandatory dependencies** to run. However, installing the optional dependencies unlocks live system monitoring and rich model card parsing.
+
+**1. Install Optional Dependencies (Recommended):**
+```bash
+pip install psutil huggingface_hub pyyaml
