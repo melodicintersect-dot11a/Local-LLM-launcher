@@ -17,11 +17,14 @@ Designed for power users who need deep control over sampling, speculative decodi
 - **📊 Live Monitoring:** Real-time CPU, RAM, and GPU VRAM usage progress bars.
 - **🧪 Built-in Benchmarking:** "Test Prompt" tab to send requests, measure Time-To-First-Token (TTFT), and calculate accurate Tokens/Second using server-side timings.
 - **⚙️ Configuration Management:** Save, load, and export complex server configurations to JSON.
+- - **🔄 Dual Compatibility:** Works seamlessly with both [mainline llama.cpp](https://github.com/ggml-org/llama.cpp) and the [TurboQuant fork](https://github.com/TheTom/llama-cpp-turboquant), including exclusive support for `turbo2/3/4` KV cache types.
 
 ## 📋 Prerequisites
 
 1. **Python 3.10+** installed on your system.
-2. **`llama-server.exe`**: Download the latest release from the [llama.cpp releases page](https://github.com/ggerganov/llama.cpp/releases).
+2. **`llama-server.exe`**: Download the latest release from either:
+   - [Mainline llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases) *(Recommended for most users)*
+   - [TurboQuant fork releases](https://github.com/TheTom/llama-cpp-turboquant) *(Required if you want to use `turbo2/3/4` KV cache quantization)*
 3. **GGUF Models**: Place your `.gguf` models in a designated folder.
 
 ## 🛠️ Installation
@@ -38,6 +41,13 @@ The launcher is built with pure Python and **requires no mandatory dependencies*
 **1. Install Optional Dependencies (Recommended):**
 ```bash
 pip install psutil huggingface_hub pyyaml
+
+## ⚠️ Compatibility & Pro-Tips
+
+- **Mainline vs. TurboQuant:** The launcher is designed to work perfectly with the standard mainline `llama.cpp` build out of the box. 
+- **TurboQuant KV Cache:** If you select `turbo2`, `turbo3`, or `turbo4` from the KV Cache dropdown, you **must** be using a `llama-server.exe` built from the [TurboQuant fork](https://github.com/TheTom/llama-cpp-turboquant). Selecting these options with a mainline build will result in a startup error.
+- **Graceful Degradation:** If you don't install the optional Python dependencies (`psutil`, `huggingface_hub`, `pyyaml`), the launcher will still run perfectly. It will simply fall back to basic Windows commands for RAM monitoring and skip advanced HuggingFace metadata parsing.
+- **Windows Optimized:** The memory monitoring, GPU detection, and background execution (`CREATE_NO_WINDOW`) are currently optimized for Windows. Linux/macOS users may need to tweak the `_fetch_memory` and `_detect_gpus` methods to use `rocm-smi` or standard Linux `/proc` parsing.
 
 ## 📖 Detailed User Guide
 
